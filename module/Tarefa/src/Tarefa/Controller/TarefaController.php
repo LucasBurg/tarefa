@@ -7,6 +7,21 @@ class TarefaController extends AbstractActionController
 {
     public function indexAction()
     {
-        return array();
+        return [];
+    }
+    
+    public function addAction()
+    {
+	return [];
+    }
+    
+    public function editAction()
+    {
+	return [];
+    }
+    
+    public function deleteAction()
+    {
+	return [];
     }
 }
