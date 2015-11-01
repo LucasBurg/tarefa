@@ -1,1 +1,28 @@
-ola mundo
+<?php
+ $title = 'My task list';
+ $this->headTitle($title);
+ ?>
+ <h1><?php echo $this->escapeHtml($title); ?></h1>
+ <p><a href="<?php echo $this->url('tarefa', array('action'=>'add'));?>">Add new item</a></p>
+
+
+ <table class="table">
+ <tr>
+     <th>Task</th>
+     <th>Created</th>
+     <th>Completed?</th>
+     <th>&nbsp;</th>
+ </tr>
+ <?php foreach ($tarefas as $tarefa): ?>
+ <tr>
+     <td>
+         <a href="<?php echo $this->url('tarefa', array('action' => 'edit', 'id' => $tarefa->getId()));?>"><?php echo $this->escapeHtml($tarefa->getTitle()); ?></a>
+     </td>
+     <td><?php echo $this->escapeHtml($tarefa->getCreated()); ?></td>
+     <td><?php echo $tarefa->getCompleted() ? 'Yes' : 'No'; ?></td>
+     <td>
+         <a href="<?php echo $this->url('tarefa', array('action'=>'delete', 'id' => $tarefa->getId()));?>">Delete</a>
+     </td>
+ </tr>
+ <?php endforeach; ?>
+ </table>
