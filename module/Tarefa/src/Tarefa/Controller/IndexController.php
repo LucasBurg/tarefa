@@ -11,7 +11,7 @@ class IndexController extends AbstractActionController
 {
     public function indexAction()
     {
-	return $this->redirect()->toRoute('tarefa');
+	//return $this->redirect()->toRoute('tarefa');
     }
     
 }
