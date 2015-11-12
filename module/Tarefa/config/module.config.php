@@ -56,6 +56,40 @@ return [
 		]
 	    ]
 	]
-    ]
+    ],
+    'service_manager' => array(
+	'factories' => array(
+	    'navigation' => 'Zend\Navigation\Service\DefaultNavigationFactory'
+	)
+    ),
+    'navigation' => array(
+	'default' => array(
+	    array(
+		'label' => 'Home',
+		'route' => 'home',
+	    ),
+	    array(
+		'label' => 'Tarefa',
+		'route' => 'tarefa',
+		'pages' => array(
+		    array(
+			'label' => 'Add',
+			'route' => 'tarefa',
+			'action' => 'add',
+		    ),
+		    array(
+			'label' => 'Edit',
+			'route' => 'tarefa',
+			'action' => 'edit',
+		    ),
+		    array(
+			'label' => 'Delete',
+			'route' => 'tarefa',
+			'action' => 'delete',
+		    )
+		)
+	    )
+	)
+    )
 ];
    
