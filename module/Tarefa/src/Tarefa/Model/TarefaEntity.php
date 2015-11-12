@@ -14,7 +14,7 @@ class TarefaEntity
     
     public function __construct()
     {
-	$this->created = date('Y-m-s H:i:s');
+	$this->created = date('Y-m-d H:i:s');
     }
     
     public function getId()

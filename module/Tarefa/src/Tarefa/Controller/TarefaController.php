@@ -11,10 +11,8 @@ class TarefaController extends AbstractActionController
 {
     public function indexAction()
     {
-	
 	$mapper = $this->getTarefaMapper();
-	
-        return new ViewModel([
+	return new ViewModel([
 	    'tarefas' => $mapper->fetchAll()		
 	]);
     }
@@ -23,6 +21,7 @@ class TarefaController extends AbstractActionController
     {
 	$form   = new TarefaForm();
 	$tarefa = new TarefaEntity();
+	
 	$form->bind($tarefa);
 	
 	$req = $this->getRequest();
